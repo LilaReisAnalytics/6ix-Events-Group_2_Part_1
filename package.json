@@ -1,5 +1,5 @@
 {
-  "name": "App 6ix Events"",
+  "name": "App 6ix Events",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -43,13 +43,13 @@
     "@types/passport-local": "^1.0.33",
     "@types/passport-local-mongoose": "^4.0.13"
   },
-  "description": "6ix Event",,
+  "description": "6ix Event",
   "main": "server.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/LilaReisAnalytics/6ix-Events-Group_2.git"
   },
-  "author": "Tom Tsiliopoulos",
+  "author": "Group_2",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/LilaReisAnalytics/6ix-Events-Group_2"
