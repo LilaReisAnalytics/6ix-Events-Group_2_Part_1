@@ -47,13 +47,13 @@
   "main": "server.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/LilaReisAnalytics/6ix-Events-Group_2.git"
+    "url": "git+https://github.com/LilaReisAnalytics/6ix-Events-Group_2_Part_1.git"
   },
   "author": "Group_2",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/LilaReisAnalytics/6ix-Events-Group_2"
+    "url": "https://github.com/LilaReisAnalytics/6ix-Events-Group_2_Part_1"
   },
-  "homepage": "https://github.com/LilaReisAnalytics/6ix-Events-Group_2#readme"
+  "homepage": "https://github.com/LilaReisAnalytics/6ix-Events-Group_2_Part_1#readme"
 }
 
