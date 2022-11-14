@@ -1,0 +1,71 @@
+<div class="container-fluid">
+  <div class="row">
+
+    <!-- Names -->
+    <div class="col-3 p-2">
+      <button class="btn btn-block btn-outline-primary" (click)='changeName()'>
+        All Events
+      </button>
+      <button *ngFor='let name of name'
+        class="btn btn-outline-primary btn-block"
+        [class.active] = 'name == selectedName' (click)='changeName(name)'>
+        {{ name }}
+      </button>
+    </div>
+
+    <!-- Events -->
+    <div class="col-9 p-2">
+      <div *ngFor='let event of events' class="card m-1 p-1 bg-light">
+        <h4>
+          {{ event.name }}
+          <span class="badge badge-pill  float-right">
+            {{ event.price | currency: 'USD':'symbol':'2.2-2' }}
+          </span>
+        </h4>
+        <!--Edit-->
+        <div class="card-text bg-white p-1">{{ event.description }}
+          <button class="btn btn-info btn-sm float-right"
+            (click)='addEventToCart(event)'>
+            Edit Event
+          </button>
+        </div>
+
+        <!-- Delete-->
+        <div class="card-text bg-white p-2">
+          <button class="btn btn-success btn-danger
+           float-right"
+            (click)='deleteLine(event)'>
+           Delete
+          </button>
+        </div>
+      </div>
+  <!--Add Event-->
+  <div class="btn-group float-right">
+    <button class="btn btn-success float-right" 
+  (click)='addEventToList()'
+    >  --- Add Event ---
+    </button>
+  </div>
+
+      <div class="form-inline float-left mr-1">
+        <select class="form-control" [value]='eventsPerPage'
+        (change)='changePageSize($event.target.value)'>
+          <option value="3">3 per Page</option>
+          <option value="4">4 per Page</option>
+          <option value="6">6 per Page</option>
+          <option value="8">8 per Page</option>
+        </select>
+      </div>
+
+      <div class="btn-group float">
+        <button *counter='let page of pageCount' (click)='changePage(page)'
+         class="btn btn-outline-primary"
+        [class.active]='page == selectedPage'>
+        {{ page }}
+      </button>
+    </div>
+  
+    </div>
+
+  </div>
+</div>
