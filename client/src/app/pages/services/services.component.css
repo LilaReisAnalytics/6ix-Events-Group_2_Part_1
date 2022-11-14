@@ -31,7 +31,7 @@
     margin: 0;
   }
   .section {
-    padding: 50px;
+  
     text-align: center;
     margin: auto;
   }
@@ -40,3 +40,17 @@
     max-width: 1200px;
     margin: auto;
   }
+  #home {
+    background: url('../../../assets/images/service.jpg') center/cover no-repeat;
+    padding: 40px;
+    padding-top: 120px;
+    text-align: center;
+    border-top: 2px solid red;
+  }
+  .service-page{
+    font-size: 70px;
+
+    color: white;
+    font-family: Cherry Swash;
+    text-shadow: 2px 2px 2px grey;
+}
