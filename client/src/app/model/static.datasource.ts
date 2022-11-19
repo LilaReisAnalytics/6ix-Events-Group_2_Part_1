@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Event } from './event.model';
 import { Observable, from } from 'rxjs';
+import { Order } from './order.model';
+
 
 @Injectable()
 export class StaticDataSource
@@ -27,5 +29,11 @@ export class StaticDataSource
   getEvents(): Observable<Event[]>
   {
     return from([this.events]);
+  }
+
+  saveOrder(order: Order): Observable<Order>
+  {
+    console.log(JSON.stringify(order));
+    return from ([order]);
   }
 }

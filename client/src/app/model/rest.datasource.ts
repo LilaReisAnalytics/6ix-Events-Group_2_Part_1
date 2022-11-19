@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Event } from './event.model';
+import { Order } from './order.model';
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 const PROTOCOL = 'http';
 const PORT = 3500;
@@ -10,8 +12,17 @@ const PORT = 3500;
 export class RestDataSource
 {
   baseUrl: string;
+  authToken: string;
 
-  constructor(private http: HttpClient)
+  private httpOptions =
+  {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin': '*',
+    'Access-control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept'
+    })
+  };
+  constructor(private http: HttpClient, private jwtService: JwtHelperService)
   {
     this.baseUrl = `${PROTOCOL}://${location.hostname}:${PORT}/`;
   }
@@ -20,5 +31,22 @@ export class RestDataSource
   {
     return this.http.get<Event[]>(this.baseUrl + 'event-list');
   }
+  saveOrder(order: Order): Observable<Order>
+  {
+    console.log(JSON.stringify(order));
+    return this.http.post<Order>(this.baseUrl + 'orders/add', order);
+  }
+
+  getOrders(): Observable<Order[]>
+  {
+    return this.http.get<Order[]>(this.baseUrl + 'orders');
+  }
+  private loadToken(): void
+  {
+    const token = localStorage.getItem('id_token');
+    this.authToken = token;
+    this.httpOptions.headers = this.httpOptions.headers.set('Authorization', this.authToken);
+  }
+
 }
 

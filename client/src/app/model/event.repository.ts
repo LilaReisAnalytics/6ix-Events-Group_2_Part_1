@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Event } from './event.model';
 import { StaticDataSource } from './static.datasource';
-/*import { RestDataSource } from './rest.datasource';*/
+import { RestDataSource } from './rest.datasource';
 
 @Injectable()
 export class EventRepository
@@ -9,7 +9,7 @@ export class EventRepository
   private events: Event[] = [];
   private name: string[] = [];
 
-  constructor(private dataSource: StaticDataSource)
+  constructor(private dataSource: RestDataSource)
   {
     dataSource.getEvents().subscribe(data => {
       this.events = data;

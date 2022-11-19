@@ -17,19 +17,13 @@
               <td class="text-center" colspan="4">Your cart is empty</td>
             </tr>
             <!-- repeating Section-->
-            <tr *ngFor="let line of cart.lines">
+            <tr *ngFor='let line of cart.lines'>
               <td>
-                <input
-                  type="number"
-                  class="form-control-sm"
-                  style="width: 5em"
-                  [value]="line.quantity"
-                  (change)="Cart.updateQuantity(line.event, $event.target.value)"
-                />
+                <input type="number" class="form-control-sm" style="width: 5em"
+                [value]='line.quantity'
+                (change)='cart.updateQuantity(line.event, $event.target.value)'>
               </td>
-              <td>
-                {{ line.event.name }}
-              </td>
+              <td>{{ line.event.name }}</td>
               <td class="text-right">
                 {{ line.event.price | currency: "USD":"symbol":"2.2-2" }}
               </td>
@@ -37,21 +31,21 @@
                 {{ line.lineTotal | currency: "USD":"symbol":"2.2-2" }}
               </td>
               <td class="center">
-                <a
-                  class="btn btn-sm btn-danger"
-                  (click)="cart.removeLine(line.event._id)"
-                >
+                <a class="btn btn-sm btn-danger"
+                  (click)="cart.removeLine(line.event._id)">
                   Remove
                 </a>
               </td>
             </tr>
           </tbody>
           <tfoot>
+            <tr>
             <td colspan="3" class="text-right">Total:</td>
             <td class="text-right">
               {{ cart.cartPrice | currency: "USD":"symbol":"2.2-2" }}
             </td>
-          </tfoot>
+          </tr>
+          </tfoot>        
         </table>
       </div>
     </div>
@@ -62,11 +56,8 @@
           <button class="btn btn-primary m-1" routerLink="/event-list">
             Countinue Shopping
           </button>
-          <button
-            class="btn btn-secondary m-1"
-            routerLink="/checkout"
-            [disabled]="cart.lines.length == 0"
-          >
+          <button class="btn btn-secondary m-1" routerLink="/checkout"
+            [disabled]="cart.lines.length == 0">
             Checkout
           </button>
         </div>

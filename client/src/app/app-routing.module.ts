@@ -5,7 +5,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { ServicesComponent } from './pages/services/services.component';
-import { EventStoreComponent } from './event-store/event-store.component'; // change something here 
+import { EventStoreComponent } from './event-store/event-store.component'; 
 import { ContactComponent } from './pages/contact/contact.component';
 import { CartDetailComponent } from './event-store/cart-detail/cart-detail.component';
 import { CheckoutComponent } from './event-store/checkout/checkout.component';
@@ -16,7 +16,7 @@ const routes: Routes = [
  {path: 'about', component: AboutComponent, data: {title: 'About'}},
  {path: 'products', component: ProductsComponent, data: {title: 'Products'}},
  {path: 'services', component: ServicesComponent, data: {title: 'Services'}},
- {path: 'event-list', component: EventStoreComponent, data: { title: 'Event List'}, canActivate: [StoreFirstGuard]}, // change the name 
+ {path: 'event-list', component: EventStoreComponent, data: { title: 'Event List'}, canActivate: [StoreFirstGuard]}, 
  {path: 'cart', component: CartDetailComponent, data: { title: 'Shopping Cart'}, canActivate: [StoreFirstGuard]},
  {path: 'checkout', component: CheckoutComponent, data: { title: 'Checkout'}, canActivate: [StoreFirstGuard]},
  {path: 'contact', component: ContactComponent, data: {title: 'Contact'}},

@@ -55,22 +55,7 @@ export class EventStoreComponent
 
   addEventToCart(event: Event): void
   {
-    debugger;
     this.cart.addLine(event);
-    console.log(this.cart.lines.length);
-
     this.router.navigateByUrl('/cart');
-  }
-  deleteLine(id: number): void
-  {
-    //const index = this.name.findIndex((l) => l.event._id === id);
-   //this.name.splice(index, 1);
-    //this.recalculate();
-  }
-  addEventToList(){
-
-    //this.events.addLine(event);
-    //console.log(this.l)
-
   }
 }

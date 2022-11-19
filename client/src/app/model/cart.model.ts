@@ -10,7 +10,7 @@ export class Cart
 
   addLine(event: Event, quantity: number = 1): void
   {
-    const line = this.lines.find((l) => l.event._id === event._id);
+    const line = this.lines.find(l => l.event._id === event._id);
     if (line !== undefined)
     {
       line.quantity += quantity;
@@ -34,7 +34,7 @@ export class Cart
 
   removeLine(id: number): void
   {
-    const index = this.lines.findIndex((l) => l.event._id === id);
+    const index = this.lines.findIndex(l => l.event._id === id);
     this.lines.splice(index, 1);
     this.recalculate();
   }
@@ -50,7 +50,7 @@ export class Cart
   {
     this.itemCount = 0;
     this.cartPrice = 0;
-    this.lines.forEach((l) => {
+    this.lines.forEach(l => {
       this.itemCount += l.quantity;
       this.cartPrice += (l.quantity *  l.event.price);
     });

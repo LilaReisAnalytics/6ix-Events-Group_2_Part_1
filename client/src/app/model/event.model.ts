@@ -9,16 +9,16 @@ export class Event
     public price?: number
   ){}
 
-  // public toString(): string
-  // {
-  //   return `
-  //   Event
-  //   ----------------
-  //   Name       : ${this.name}
-  //   Date     : ${this.date}
-  //   Description: ${this.description}
-  //   Price      : ${this.price}
-  //   --------------------------
-  //   `;
-  // }
+   public toString(): string
+  {
+    return `
+   Event
+    ----------------
+    Name       : ${this.name}
+    Date       : ${this.date}
+    Description: ${this.description}
+    Price      : ${this.price}
+   --------------------------
+    `;
+   }
 }

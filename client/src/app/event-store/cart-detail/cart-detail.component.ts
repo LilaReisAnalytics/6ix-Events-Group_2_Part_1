@@ -7,9 +7,7 @@ import { Cart } from 'src/app/model/cart.model';
   styleUrls: ['./cart-detail.component.css']
 })
 export class CartDetailComponent implements OnInit {
-  constructor(public cart: Cart) {
-    debugger
-  }
+  constructor(public cart: Cart) { }
 
   ngOnInit(): void {}
 }
