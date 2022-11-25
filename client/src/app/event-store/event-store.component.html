@@ -6,7 +6,7 @@
       <button class="btn btn-block btn-outline-primary" (click)='changeName()'>
         All Events
       </button>
-      <button *ngFor='let name of name'
+      <button *ngFor='let name of names'
         class="btn btn-outline-primary btn-block"
         [class.active] = 'name == selectedName' (click)='changeName(name)'>
         {{ name }}

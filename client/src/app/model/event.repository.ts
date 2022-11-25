@@ -7,13 +7,13 @@ import { RestDataSource } from './rest.datasource';
 export class EventRepository
 {
   private events: Event[] = [];
-  private name: string[] = [];
+  private names: string[] = [];
 
   constructor(private dataSource: RestDataSource)
   {
     dataSource.getEvents().subscribe(data => {
       this.events = data;
-      this.name = data.map(b => b.name)
+      this.names = data.map(b => b.name)
         .filter((a, index, array) => array.indexOf(a) === index).sort();
     });
   }
@@ -29,8 +29,8 @@ export class EventRepository
     return this.events.find(b => b._id === id);
   }
 
-  getName(): string[]
+  getNames(): string[]
   {
-    return this.name;
+    return this.names;
   }
 }

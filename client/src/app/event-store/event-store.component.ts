@@ -26,9 +26,9 @@ export class EventStoreComponent
     .slice(pageIndex, pageIndex + this.eventsPerPage);
   }
 
-  get name(): string[]
+  get names(): string[]
   {
-    return this.repository.getName();
+    return this.repository.getNames();
   }
 
   changeName(newName?: string): void
