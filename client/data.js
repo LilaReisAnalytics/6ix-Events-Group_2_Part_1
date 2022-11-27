@@ -2,7 +2,7 @@ module.exports = function () {
   return {
     "event-list": [
       {
-        id: 1,
+        _id: 1,
         name: "The Royal Agricultural Winter Fair",
         date: "Nov 10, 2022",
         description:
@@ -10,7 +10,7 @@ module.exports = function () {
         price: 30.00,
       },
       {
-        id: 2,
+        _id: 2,
         name: "Daniel meets Floyd: sculptures by Floyd Kuptana, drawings by Daniel Hanequand",
         date: "Nov 10, 2022",
         description:
@@ -18,7 +18,7 @@ module.exports = function () {
         price: 0,
       },
       {
-        id: 3,
+        _id: 3,
         name: "Ring 60 Works 60 Years: Toronto Outdoor Art Fair at 60",
         date: "Nov 10, 2022",        
         description:
@@ -27,7 +27,7 @@ module.exports = function () {
         
       },
       {
-        id: 4,
+        _id: 4,
         name: "Adam Magyar | Urban Times",
         date: "Nov 10, 2022",          
         description:
@@ -35,7 +35,7 @@ module.exports = function () {
         price: 0,
       },
       {
-        id: 5,
+        _id: 5,
         name: "Afghanistan My Love",
         date: "Nov 10, 2022",          
         description:
@@ -43,7 +43,7 @@ module.exports = function () {
         price: 20.00,
       },
       {
-        id: 6,
+        _id: 6,
         name: "Alan Michelson",
         date: "Nov 12, 2022",          
         description:
@@ -51,7 +51,7 @@ module.exports = function () {
         price: 20.00,
       },
       {
-        id: 7,
+        _id: 7,
         name: "All That Is Golden",
         date: "Nov 4, 2022 - Nov 30, 2022",          
         description:
@@ -59,7 +59,7 @@ module.exports = function () {
         price: 0.00,
       },
       {
-        id: 8,
+        _id: 8,
         name: "Annual Sumi-e Exhibition of Japanese Brush Paintings",
         date: "Nov 12, 2022",          
         description:
@@ -67,7 +67,7 @@ module.exports = function () {
         price: 0.00,
       },
       {
-        id: 9,
+        _id: 9,
         name: "Arthritis Fire Ball™",
         date: "Nov 12, 2022",          
         description:
@@ -75,7 +75,7 @@ module.exports = function () {
         price: 20.00,
       },
       {
-        id: 10,
+        _id: 10,
         name: "As We Rise: Photography from the Black Atlantic",
         date: "Nov 12, 2022",          
         description:
