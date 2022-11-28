@@ -16,7 +16,7 @@ const routes: Routes = [
  {path: 'login', data: {title: 'Login'}, redirectTo: '/admin/auth', pathMatch: 'full'},
 
  {path: 'about', component: AboutComponent, data: {title: 'About'}},
- {path: 'products', component: ProductsComponent, data: {title: 'Products'}},
+ {path: 'products', component: ProductsComponent, data: {title: 'Things to Do'}},
  {path: 'services', component: ServicesComponent, data: {title: 'Services'}},
  {path: 'contact', component: ContactComponent, data: {title: 'Contact'}},
 
