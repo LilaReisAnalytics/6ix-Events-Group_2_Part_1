@@ -13,7 +13,7 @@ export function jwtTokenGetter(): string
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
