@@ -47,12 +47,12 @@
 
 
         <li *ngIf='isLoggedIn()' class="nav-item">
-          <a (click)='onLogoutClick()' routerLink='/logout' class="nav-link" href="/login">
+          <a (click)='onLogoutClick()' routerLink='/logout' class="nav-link" href="/login" style="color: rgb(105, 104, 104);">
             <i class="fas fa-lg fa-sign-out-alt"></i> Logout </a>
         </li>
 
         <li *ngIf='!isLoggedIn()' class="nav-item">
-          <a class="nav-link" routerLink="/login"><i class="fas fa-lg fa-sign-in-alt"></i> Login </a>
+          <a class="nav-link" routerLink="/login" style="color: rgb(105, 104, 104);"><i class="fas fa-lg fa-sign-in-alt"></i> Login </a>
         </li>
 
 
