@@ -33,4 +33,26 @@ export class EventRepository
   {
     return this.names;
   }
+  saveEvent(savedEvent: Event): void
+  {
+    if (savedEvent._id === null || savedEvent._id === 0 || savedEvent._id === undefined)
+    {
+      this.dataSource.addEvent(savedEvent).subscribe(b => {
+        this.events.push(savedEvent);
+      });
+    }
+    else
+    {
+      this.dataSource.updateEvent(savedEvent).subscribe(event => {
+        this.events.splice(this.events.findIndex(b => b._id === savedEvent._id), 1, savedEvent);
+      });
+    }
+  }
+
+  deleteEvent(deletedEventID: number): void
+  {
+    this.dataSource.deleteEvent(deletedEventID).subscribe(event => {
+      this.events.splice(this.events.findIndex(b => b._id === deletedEventID), 1);
+    });
+  }
 }
