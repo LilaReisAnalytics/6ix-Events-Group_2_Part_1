@@ -1,0 +1,24 @@
+.row-cols-auto > * {
+    flex: 0 0 auto;
+    width: auto;
+  }
+
+  small, .small {
+    font-size: 0.875em;
+  }
+  .list-inline-item {
+    display: inline-block;
+  }
+  .list-inline-item:not(:last-child) {
+    margin-right: 0.5rem;
+  }
+   
+
+footer.footer {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .text-center {
+    text-align: left;
+}
