@@ -14,7 +14,7 @@ class Event
     {
         return "_id          :" + this._id + "\n" +
                " name        : " + this.name + "\n" +
-               " date      : " + this.date + "\n" +
+               " date        : " + this.date + "\n" +
                " description :" + this.description + "\n" +
                " price       :" + this.price;
     }

@@ -41,8 +41,7 @@ module.exports.displayAddPage = (req, res, next) => {
 module.exports.processAddPage = (req, res, next) => {
     let newEvent = Event({
         "name": req.body.name,
-        "author": req.body.author,
-        "published": req.body.published,
+        "date": req.body.date,
         "description": req.body.description,
         "price": req.body.price
     });
@@ -92,8 +91,7 @@ module.exports.processEditPage = (req, res, next) => {
     let updatedEvent = Event({
         "_id": id,
         "name": req.body.name,
-        "author": req.body.author,
-        "published": req.body.published,
+        "date": req.body.date,
         "description": req.body.description,
         "price": req.body.price
     });

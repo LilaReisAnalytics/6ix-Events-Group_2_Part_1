@@ -20,7 +20,7 @@ module.exports.displayAboutPage = (req, res, next) => {
 }
 
 module.exports.displayProductsPage = (req, res, next) => {
-    res.render('index', { title: 'Things to do', displayName: req.user ? req.user.displayName : ''});
+    res.render('index', { title: 'Products', displayName: req.user ? req.user.displayName : ''});
 }
 
 module.exports.displayServicesPage = (req, res, next) => {
