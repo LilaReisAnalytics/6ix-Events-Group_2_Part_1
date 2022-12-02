@@ -20,7 +20,7 @@ module.exports.displayAboutPage = (req, res, next) => {
 }
 
 module.exports.displayProductsPage = (req, res, next) => {
-    res.render('index', { title: 'Products', displayName: req.user ? req.user.displayName : ''});
+    res.render('index', { title: 'Things to do', displayName: req.user ? req.user.displayName : ''});
 }
 
 module.exports.displayServicesPage = (req, res, next) => {
@@ -80,17 +80,15 @@ module.exports.processLoginPage = (req, res, next) => {
             const authToken = jwt.sign(payload, DB.Secret, {
                 expiresIn: 604800 // 1 week
             });
-
-            /* TODO - Getting Ready to convert to API
-            res.json({success: true, msg: 'User Logged in Successfully!', user: {
+            
+            return res.json({success: true, msg: 'User Logged in Successfully!', user: {
                 id: user._id,
                 displayName: user.displayName,
                 username: user.username,
                 email: user.email
             }, token: authToken});
-            */
 
-            return res.redirect('/book-list');
+            //return res.redirect('/event-list');
         });
     })(req, res, next);
 }
@@ -146,18 +144,19 @@ module.exports.processRegisterPage = (req, res, next) => {
 
             // redirect the user and authenticate them
 
-            /* TODO - Getting Ready to convert to API
-            res.json({success: true, msg: 'User Registered Successfully!'});
-            */
+            return res.json({success: true, msg: 'User Registered Successfully!'});
 
+            /*
             return passport.authenticate('local')(req, res, () => {
-                res.redirect('/book-list')
+                res.redirect('/event-list')
             });
+            */
         }
     });
 }
 
 module.exports.performLogout = (req, res, next) => {
     req.logout();
-    res.redirect('/');
+    //res.redirect('/');
+    res.json({success: true, msg: 'User Successfully Logged out!'});
 }

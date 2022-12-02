@@ -5,33 +5,41 @@ let mongoose = require('mongoose');
 let jwt = require('jsonwebtoken');
 
 // create a reference to the model
-let Book = require('../models/book');
+let Event = require('../models/event');
 
-module.exports.displayBookList = (req, res, next) => {
-    Book.find((err, bookList) => {
+module.exports.displayEventList = (req, res, next) => {
+    Event.find((err, eventList) => {
         if(err)
         {
             return console.error(err);
         }
         else
         {
-            //console.log(BookList);
+            //console.log(EventList);
 
-            res.render('book/list', 
-            {title: 'Books', 
-            BookList: bookList, 
+            /*
+            res.render('event/list', 
+            {title: 'Events', 
+            EventList: eventList, 
             displayName: req.user ? req.user.displayName : ''});      
+            */
+
+            res.json(eventList);
         }
     });
 }
 
 module.exports.displayAddPage = (req, res, next) => {
-    res.render('book/add', {title: 'Add Book', 
-    displayName: req.user ? req.user.displayName : ''})          
+    /*
+    res.render('event/add', {title: 'Add Event', 
+    displayName: req.user ? req.user.displayName : ''});
+    */
+   
+    res.json({success: true, msg: 'Succesfully Displayed Add Page'});
 }
 
 module.exports.processAddPage = (req, res, next) => {
-    let newBook = Book({
+    let newEvent = Event({
         "name": req.body.name,
         "author": req.body.author,
         "published": req.body.published,
@@ -39,7 +47,7 @@ module.exports.processAddPage = (req, res, next) => {
         "price": req.body.price
     });
 
-    Book.create(newBook, (err, Book) =>{
+    Event.create(newEvent, (err, Event) =>{
         if(err)
         {
             console.log(err);
@@ -47,8 +55,10 @@ module.exports.processAddPage = (req, res, next) => {
         }
         else
         {
-            // refresh the book list
-            res.redirect('/book-list');
+            // refresh the event list
+            //res.redirect('/event-list');
+
+            res.json({success: true, msg: 'Successfully Added New Event'});
         }
     });
 
@@ -57,7 +67,7 @@ module.exports.processAddPage = (req, res, next) => {
 module.exports.displayEditPage = (req, res, next) => {
     let id = req.params.id;
 
-    Book.findById(id, (err, bookToEdit) => {
+    Event.findById(id, (err, eventToEdit) => {
         if(err)
         {
             console.log(err);
@@ -66,8 +76,12 @@ module.exports.displayEditPage = (req, res, next) => {
         else
         {
             //show the edit view
-            res.render('book/edit', {title: 'Edit Book', book: bookToEdit, 
-            displayName: req.user ? req.user.displayName : ''})
+            /*
+            res.render('event/edit', {title: 'Edit Event', event: eventToEdit, 
+            displayName: req.user ? req.user.displayName : ''});
+            */
+
+            res.json({success: true, msg: 'Successfully Displayed Event to Edit', event: eventToEdit});
         }
     });
 }
@@ -75,7 +89,7 @@ module.exports.displayEditPage = (req, res, next) => {
 module.exports.processEditPage = (req, res, next) => {
     let id = req.params.id
 
-    let updatedBook = Book({
+    let updatedEvent = Event({
         "_id": id,
         "name": req.body.name,
         "author": req.body.author,
@@ -84,7 +98,7 @@ module.exports.processEditPage = (req, res, next) => {
         "price": req.body.price
     });
 
-    Book.updateOne({_id: id}, updatedBook, (err) => {
+    Event.updateOne({_id: id}, updatedEvent, (err) => {
         if(err)
         {
             console.log(err);
@@ -92,8 +106,10 @@ module.exports.processEditPage = (req, res, next) => {
         }
         else
         {
-            // refresh the book list
-            res.redirect('/book-list');
+            // refresh the event list
+            //res.redirect('/event-list');
+
+            res.json({success: true, msg: 'Successfully Edited Event', event: updatedEvent});
         }
     });
 }
@@ -101,7 +117,7 @@ module.exports.processEditPage = (req, res, next) => {
 module.exports.performDelete = (req, res, next) => {
     let id = req.params.id;
 
-    Book.remove({_id: id}, (err) => {
+    Event.deleteOne({_id: id}, (err) => {
         if(err)
         {
             console.log(err);
@@ -109,8 +125,10 @@ module.exports.performDelete = (req, res, next) => {
         }
         else
         {
-             // refresh the book list
-             res.redirect('/book-list');
+             // refresh the Event list
+             //res.redirect('/event-list');
+
+             res.json({success: true, msg: 'Successfully Deleted Event'});
         }
     });
 }
