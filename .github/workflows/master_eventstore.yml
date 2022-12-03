@@ -52,5 +52,5 @@ jobs:
         with:
           app-name: 'EventStore'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E1A381C0F8D54AFE9A03EF1707519E48 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_989B2A154ADC4807A23B5DCEAB6AF00C }}
           package: .
