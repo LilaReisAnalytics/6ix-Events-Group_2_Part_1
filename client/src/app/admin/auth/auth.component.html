@@ -1,5 +1,16 @@
+<style>
+  .btn-primary{
+    border-color: #208c39;
+    background-color:#208c39;
+  }
+
+  .btn-secondary{
+     background-color:rgb(198, 57, 57);
+     border-color: rgb(198, 57, 57);
+  }
+</style>
 <div class="bg-info p-2 text-center text-white">
-    <h3>EventStore Admin</h3>
+    <h3 class="header">EventStore Admin</h3>
   </div>
   
   <main class="container">
@@ -9,7 +20,7 @@
           *ngIf='errorMessage != null'>
           {{ errorMessage }}
         </div>
-        <h1>Please Login</h1>
+        <h1 style="margin-top: 20px"> Please Login</h1>
         <form autocomplete='off' #form='ngForm' (ngSubmit)='authenticate(form)'>
   
         <fieldset class="form-group">
@@ -28,7 +39,7 @@
           id='password' required autocomplete='off'>
         </fieldset>
   
-        <fieldset class="form-group text-right">
+        <fieldset class="form-group text-right" style="margin-bottom:400px;">
           <button class='btn btn-primary m-1' type='submit'>
             <i class="fas fa-sign-in-alt"></i>
             Log In
@@ -37,6 +48,9 @@
             <i class="fas fa-undo"></i>
             Cancel
           </button>
+      
+          
+          
         </fieldset>
   
       </form>

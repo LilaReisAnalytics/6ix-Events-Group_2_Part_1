@@ -1,3 +1,23 @@
+<style>
+  .btn-primary {
+    color: #fff;
+    background-color:#208c39;
+    border-color: #208c39;
+    
+}
+.btn-danger {
+    color: #fff;
+    background-color: rgb(198, 57, 57);
+    border-color: rgb(198, 57, 57);
+}
+#add{
+  color: #fff;
+    background-color:rgb(241, 210, 34);
+    border-color:rgb(241, 210, 34);
+
+    
+}
+</style>
 <table class="table table-sm table-striped">
     <thead>
       <tr>
@@ -28,7 +48,7 @@
       </tr>
     </tbody>
   </table>
-  <button class="btn btn-primary" (click)='addEvent()'>
+  <button class="btn btn-primary" id="add"  (click)='addEvent()'>
     <i class="fas fa-plus-circle"></i> Add New Event
   </button>
   

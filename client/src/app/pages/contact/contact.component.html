@@ -55,12 +55,15 @@
     #contact textarea,
     #contact button[type="submit"] {
         font: 400 12px/16px "Roboto", Helvetica, Arial, sans-serif;
+  
     }
 
     #contact {
+        width: 500px;
+        height: 450px;
         background: #F9F9F9;
         padding: 25px;
-        margin: 150px 0;
+        margin: 50px 0;
         box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
     }
 
@@ -109,7 +112,12 @@
         resize: none;
     }
 
-    #contact button[type="submit"] {
+
+
+
+  
+
+    #contact button[type="reset"] {
         cursor: pointer;
         width: 100%;
         border: none;
@@ -138,7 +146,7 @@
                 <textarea placeholder="Type your message here...." tabindex="5" required></textarea>
             </fieldset>
             <fieldset>
-                <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+                <button name="submit" type="reset" id="contact-submit" data-submit="...Sending">Submit</button>
             </fieldset>
         </form>
     </div>
