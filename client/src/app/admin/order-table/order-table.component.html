@@ -11,7 +11,7 @@
     <thead>
       <tr>
         <th>Name</th>
-        <th>Postal Code</th>
+    
         <th colspan="2">Cart</th>
         <th></th>
         <th></th>
@@ -24,12 +24,11 @@
       <ng-template ngFor let-o [ngForOf]='getOrders()'>
         <tr>
           <td>{{ o.name }}</td>
-          <td>{{ o.postalCode }}</td>
           <th>Product</th>
           <th>Quantity</th>
           <td>
             <button class="btn btn-warning m-1" (click)='markShipped(o)'>
-              <i class="{{ o.shipped ? 'fas fa-shipping-fast' : 'fas fa-truck' }}"></i> {{ o.shipped ? "Shipped" : "Ship" }}
+              <i class="{{ o.shipped ? 'fas fa-shipping-fast' : 'fas fa-truck' }}"></i> {{ o.shipped ? "emailed" : "email" }}
             </button>
           </td>
           <td>

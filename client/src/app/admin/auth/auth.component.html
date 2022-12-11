@@ -1,7 +1,29 @@
 <style>
   .btn-primary{
-    border-color: #208c39;
-    background-color:#208c39;
+    border-color: #29a3b5;
+    background-color:#29a3b5;
+  }
+  #biggerform
+  {
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow:1px 1px 20px #5BC3D3;
+    height: 400px;
+    margin-top: 10%;
+    margin-bottom: 32%;
+    
+  }
+
+  #help
+  {
+    color: #5BC3D3;
+  }
+  
+  .header
+  {
+    font-family:'Playfair Display', serif ;
+    font-size: 40px;
   }
 
   .btn-secondary{
@@ -9,6 +31,10 @@
      border-color: rgb(198, 57, 57);
   }
 </style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+
 <div class="bg-info p-2 text-center text-white">
     <h3 class="header">EventStore Admin</h3>
   </div>
@@ -20,7 +46,8 @@
           *ngIf='errorMessage != null'>
           {{ errorMessage }}
         </div>
-        <h1 style="margin-top: 20px"> Please Login</h1>
+        <div id="biggerform">
+        <h1 style="margin-top: 20px ; font-family:'Playfair Display', serif ; "> Please Login</h1>
         <form autocomplete='off' #form='ngForm' (ngSubmit)='authenticate(form)'>
   
         <fieldset class="form-group">
@@ -38,7 +65,7 @@
           name='password' placeholder='Enter Password'
           id='password' required autocomplete='off'>
         </fieldset>
-  
+       <a href="/contact"> <p id="help" ><i>Need help?</i></p> </a>
         <fieldset class="form-group text-right" style="margin-bottom:400px;">
           <button class='btn btn-primary m-1' type='submit'>
             <i class="fas fa-sign-in-alt"></i>
@@ -47,14 +74,15 @@
           <button class='btn btn-secondary m-1' routerLink='/home'>
             <i class="fas fa-undo"></i>
             Cancel
-          </button>
-      
-          
-          
+          </button> 
+        
         </fieldset>
-  
+        
       </form>
+
+     
       </div>
     </div>
+  </div>
   </main>
   
