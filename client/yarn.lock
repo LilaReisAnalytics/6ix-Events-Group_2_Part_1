@@ -6292,9 +6292,9 @@
   "version" "1.1.60"
 
 "node@^16.13.0":
-  "integrity" "sha512-XPcWHe8fJfB3mXZMGXxl9rSOkOhxQLjmRJBt898RCzGcZGZC0oz+1Wnc7/4hqDyQ3AZZH5xp6KizkFLIOlpHzA=="
-  "resolved" "https://registry.npmjs.org/node/-/node-16.13.1.tgz"
-  "version" "16.13.1"
+  "integrity" "sha512-bCUq6u/0rVHBvCpxLFTv5/kPjJGTltcyWQ2EtqlZ6WOqSpkTVBFtNoJ9tSVIGmadb0KoRsWd2CyNs9bU/drxXQ=="
+  "resolved" "https://registry.npmjs.org/node/-/node-16.13.0.tgz"
+  "version" "16.13.0"
   dependencies:
     "node-bin-setup" "^1.0.0"
 
