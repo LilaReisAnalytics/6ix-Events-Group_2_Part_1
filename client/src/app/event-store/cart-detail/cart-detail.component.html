@@ -15,9 +15,11 @@
           </tr>
         </thead>
         <tbody>
+
+          
           <!--condition section-->
           <tr *ngIf="cart.lines.length == 0">
-            <td class="text-center" colspan="4">Your cart is empty</td>
+            <td class="text-center text-dark"  colspan="4">Your cart is empty</td>
           </tr>
           <!-- repeating Section-->
           <tr *ngFor='let line of cart.lines'>

@@ -27,10 +27,10 @@
           <th>Product</th>
           <th>Quantity</th>
           <td>
-            <button class="btn btn-warning m-1" (click)='markShipped(o)'>
-              <i class="{{ o.shipped ? 'fas fa-shipping-fast' : 'fas fa-truck' }}"></i> {{ o.shipped ? "emailed" : "email" }}
+            <button class="btn btn-success m-1" (click)='markShipped(o)'>
+              <i class="{{ o.shipped ? 'fas fa-solid fa-envelope' : 'fas fa-solid fa-envelope' }}"></i> {{ o.shipped ? "emailed" : "email" }}
             </button>
-          </td>
+          </td> 
           <td>
             <button class="btn btn-danger" (click)='delete(o._id)'>
               <i class="fas fa-trash-alt"></i> Delete
